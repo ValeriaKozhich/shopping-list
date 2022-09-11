@@ -7,28 +7,39 @@ input.addEventListener ('keydown', function(event) {
         //Отправка сообщения
         const itemsText = input.value;
 
-        const items = document.createElement ('div');
-        items.textContent = itemsText;
-    };
+        const item = document.createElement ('div');
+        item.textContent = itemsText;
+
+        if (itemsText != '') {
+            groceries.append(item);
+        };
+
+        input.value = '';
     
+    item.addEventListener ('click', cross )
+
+        function cross() {
+            item.classList.toggle('done')
+        };
+
+    };
+
 });
 
-    
+
+
+
+
+
     /* Пустые элементы не должны добавляться */
-if (itemsText != '') {
-    groceries.append(items);
-};
+
     
     /* Очищать input после добавления нового элемента в список */
-input.value = '';
+
 
 /* Если кликнуть на элемент списка, он зачеркивается */
 
 
-item.addEventListener ('click', cross) 
 
-    function cross() {
-      item.classList.toggle('done')
-    };
 /* Если кликнуть повторно уже на зачеркнутый, он снова становится обычным */
 
